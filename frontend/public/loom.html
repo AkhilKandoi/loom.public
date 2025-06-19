@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loom</title>
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <div class="tools">
+            <div class="showNdefault">
+                <button type="button" id="showEntries">Show Entries</button>
+                <button type="button" id="default">default</button>
+            </div>
+            <div class="fontnsave">
+                <select name="font" id="fontSelector" class="hoverClass">
+                    <option value="Source Code Pro">Font (Default)</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Arial">Arial</option>
+                    <option value="monospace">Monospace</option>
+                </select>
+                <select name="font-size" id="fontSizeSelector" class="hoverClass">
+                    <option value="24">24 (default)</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                    <option value="22">22</option>
+                    <option value="26">26</option>
+                    <option value="28">28</option>
+                    <option value="30">30</option>
+                    <option value="32">32</option>
+                </select>
+                <button id="savebtn" class="hoverClass">Save</button>
+            </div>
+            <div class="changeColor">
+                <div class="pageColor hoverClass">
+                    <label class="changingLables" for="pageColorInput">PageColor:</label>
+                    <input id="pageColorInput" type="color" value="#DAEFB3">
+                    <button id="defaultPageColor">Default</button>
+                </div>
+                <div class="fontColor hoverClass">
+                    <label class="changingLables" for="fontColorInput">FontColor:</label>
+                    <input id="fontColorInput" type="color" value="#000000">
+                    <button id="defaultFontColor">Default</button>
+                </div>
+                <div class="backgroundColor hoverClass">
+                    <label class="changingLables" for="backgroundColorInput">Background:</label>
+                    <input id="backgroundColorInput" type="color" value="#E3D0D8">
+                    <button id="defaultBackgroundColor">Default</button>
+                </div>
+            </div>
+            <div class="userpfp hoverClass">
+                <div class="pfp"></div>
+                <div id="usernametext">User</div>
+            </div>
+        </div>
+        <div id="entryScroll">
+            <div id="dateShow">28/07/2025, 00:18:20</div>
+            <div class="movebtn">
+                <button id="prev"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 660 960"
+                        width="24px" fill="black">
+                        <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+                    </svg></button>
+                <div id="counter">1</div>
+                <button id="forw"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        width="24px" fill="black">
+                        <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="sheet">
+            <textarea rows="10" name="diary-page" id="page" placeholder="date:"></textarea>
+        </div>
+        <!-- key input popup -->
+        <div class="overlay">
+            <div id="messageBox">
+                <button id="closeBox1">&times;</button>
+                <div class="mainKey">
+                    <form id="takeKey1">
+                        <label for="keyInput1">Enter Key:</label>
+                        <input type="password" name="key" class="keyInput" id="keyInput1" placeholder="Enter Key">
+                        <button type="submit" id="confirmKeyBtn1">Save Key</button>
+                    </form>
+                </div>
+                <div class="warntext">
+                    <p>Note: This key will be used to securely save your entries, without this key, you
+                        won't be able to see your entries, so make sure to note it down and never forget it. It can't be
+                        changed
+                        once set. </p>
+                </div>
+            </div>
+        </div>
+        <!-- save message with key popup -->
+        <div class="overlay">
+            <div id="messageBoxSaveKey">
+                <button id="closeBox2">&times;</button>
+                <div class="mainKey">
+                    <form id="takeKey2">
+                        <label for="keyInput2">Enter Key:</label>
+                        <input type="password" name="key" class="keyInput" id="keyInput2" placeholder="Enter Key">
+                        <button type="submit" id="confirmKeyBtn2">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- save message -->
+        <div class="overlay">
+            <div id="messageBoxSave">
+                <button id="closeBox3">&times;</button>
+                <div class="savetext">SAVED</div>
+            </div>
+        </div>
+        <!-- showing entries -->
+        <div class="overlay">
+            <div id="messageBoxShowKey">
+                <button id="closeBox4">&times;</button>
+                <div class="mainKey">
+                    <form id="takeKey3">
+                        <label for="keyInput3">Enter Key:</label>
+                        <input type="password" name="key" class="keyInput" id="keyInput3" placeholder="Enter Key">
+                        <button type="submit" id="confirmKeyBtn3">enter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="saveData.js"></script>
+    <script src="showData.js"></script>
+</body>
+
+</html>
